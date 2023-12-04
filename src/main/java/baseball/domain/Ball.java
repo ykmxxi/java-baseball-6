@@ -21,7 +21,7 @@ public class Ball {
     }
 
     private void validateNumberRange(final int number) {
-        if (number < MIN_NUMBER || number > Ball.MIN_NUMBER) {
+        if (number < MIN_NUMBER || number > MAX_NUMBER) {
             throw new IllegalArgumentException();
         }
     }
