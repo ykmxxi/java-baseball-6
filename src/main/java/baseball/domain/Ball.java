@@ -35,6 +35,10 @@ public class Ball {
         }
     }
 
+    public boolean isStrike(final Ball otherBall) {
+        return this.equals(otherBall);
+    }
+
     @Override
     public boolean equals(final Object o) {
         if (this == o) {

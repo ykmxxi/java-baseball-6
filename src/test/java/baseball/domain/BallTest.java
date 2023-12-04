@@ -49,4 +49,15 @@ class BallTest {
                 .doesNotThrowAnyException();
     }
 
+    @DisplayName("1개의 게임 숫자 비교: 수와 위치값이 같으면 스트라이크")
+    @Test
+    void 게임_숫자_비교_스트라이크() {
+        // given
+        Ball ball = new Ball(1, 0);
+        Ball otherBall = new Ball(1, 0);
+
+        // when & then
+        assertThat(ball.isStrike(otherBall)).isTrue();
+    }
+
 }
