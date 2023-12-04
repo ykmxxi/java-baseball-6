@@ -1,11 +1,13 @@
 package baseball.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 class BallTest {
@@ -36,6 +38,15 @@ class BallTest {
         // when & then
         assertThatThrownBy(() -> new Ball(1, position))
                 .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("1개의 게임 숫자 예외 처리 통과")
+    @ParameterizedTest
+    @CsvSource(value = {"1:0", "1:2", "9:0", "9:2"}, delimiter = ':')
+    void 게임_숫자_예외_처리_통과(int number, int position) {
+        // when & then
+        assertThatCode(() -> new Ball(number, position))
+                .doesNotThrowAnyException();
     }
 
 }
