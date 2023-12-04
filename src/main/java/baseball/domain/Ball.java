@@ -6,6 +6,8 @@ public class Ball {
 
     private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 9;
+    private static final int MIN_POSITION = 0;
+    private static final int MAX_POSITION = 2;
 
     private final int number;
     private final int position;
@@ -18,10 +20,17 @@ public class Ball {
 
     private void validate(final int number, final int position) {
         validateNumberRange(number);
+        validatePositionRange(position);
     }
 
     private void validateNumberRange(final int number) {
         if (number < MIN_NUMBER || number > MAX_NUMBER) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private void validatePositionRange(final int position) {
+        if (position < MIN_POSITION || position > MAX_POSITION) {
             throw new IllegalArgumentException();
         }
     }

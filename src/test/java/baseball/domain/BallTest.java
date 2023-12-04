@@ -29,4 +29,13 @@ class BallTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
+    @DisplayName("1개의 게임 숫자 예외 처리: 위치가 0 ~ 2 사이의 값이 아니면 IllegalArgumentException 발생")
+    @ParameterizedTest
+    @ValueSource(ints = {-1, 3})
+    void 게임_숫자_위치_범위_예외_처리(int position) {
+        // when & then
+        assertThatThrownBy(() -> new Ball(1, position))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
 }
