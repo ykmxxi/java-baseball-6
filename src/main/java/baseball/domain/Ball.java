@@ -39,6 +39,10 @@ public class Ball {
         return this.equals(otherBall);
     }
 
+    public boolean isBall(final Ball otherBall) {
+        return this.number == otherBall.number && this.position != otherBall.position;
+    }
+
     @Override
     public boolean equals(final Object o) {
         if (this == o) {

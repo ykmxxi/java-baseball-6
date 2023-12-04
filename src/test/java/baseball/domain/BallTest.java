@@ -60,4 +60,15 @@ class BallTest {
         assertThat(ball.isStrike(otherBall)).isTrue();
     }
 
+    @DisplayName("1개의 게임 숫자 비교: 같은 수가 다른 자리에 있으면 볼")
+    @Test
+    void 게임_숫자_비교_볼() {
+        // given
+        Ball ball = new Ball(1, 0);
+        Ball otherBall = new Ball(1, 1);
+
+        // when & then
+        assertThat(ball.isBall(otherBall)).isTrue();
+    }
+
 }
