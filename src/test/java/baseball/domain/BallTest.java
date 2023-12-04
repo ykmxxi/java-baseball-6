@@ -12,7 +12,7 @@ class BallTest {
 
     @DisplayName("1개의 게임 숫자는 수와 위치값이 같으면 같은 숫자이다")
     @Test
-    void 게임_숫자_1개_생성() {
+    void 게임_숫자_1개_동등성_비교() {
         // given
         Ball ball = new Ball(1, 0);
 
